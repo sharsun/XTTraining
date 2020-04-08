@@ -5,6 +5,10 @@ const FilterCont = styled.div`
     padding:20px;
 `;
 
+const FilterOptionValue = styled.div`
+    padding-bottom:5px;
+`
+
 const FilterItemCont = styled.div`
     padding:10px;
     margin-bottom:20px;
@@ -37,7 +41,7 @@ export default function Filter(props) {
         <FilterCont>
             <FilterItemCont >
                 <FilterItemTitle >Species</FilterItemTitle>
-                <div >
+                <FilterOptionValue >
 
                     <label>
                         <input type="radio" value="Human"
@@ -45,28 +49,28 @@ export default function Filter(props) {
                             onChange={(e)=>handleOptionChange(e,'species')} />
                            Human
                         </label>
-                </div>
-                <div >
+                </FilterOptionValue>
+                <FilterOptionValue >
                     <label>
                         <input type="radio" value="Mytholog"
                             checked={props.selectedFilters && props.selectedFilters['species'] === 'Mytholog'}
                             onChange={(e)=>handleOptionChange(e,'species')} />
                            Mytholog
                     </label>
-                </div>
-                <div >
+                </FilterOptionValue>
+                <FilterOptionValue >
                     <label>
                         <input type="radio" value=""
                             checked={props.selectedFilters && props.selectedFilters['species'] === ''}
                             onChange={(e)=>handleOptionChange(e,'species')} />
                             All
                         </label>
-                </div>
+                </FilterOptionValue>
 
             </FilterItemCont>
             <FilterItemCont >
                 <FilterItemTitle >Status</FilterItemTitle>
-                <div >
+                <FilterOptionValue >
 
                     <label>
                         <input type="radio" value="alive"
@@ -74,36 +78,36 @@ export default function Filter(props) {
                             onChange={(e)=>handleOptionChange(e,'status')} />
                            Alive
                         </label>
-                </div>
-                <div >
+                </FilterOptionValue>
+                <FilterOptionValue >
                     <label>
                         <input type="radio" value="dead"
                             checked={props.selectedFilters && props.selectedFilters['status'] === 'dead'}
                             onChange={(e)=>handleOptionChange(e,'status')} />
                            Dead
                     </label>
-                </div>
-                <div >
+                </FilterOptionValue>
+                <FilterOptionValue >
                     <label>
                         <input type="radio" value="unknown"
                             checked={props.selectedFilters && props.selectedFilters['status'] === 'unknown'}
                             onChange={(e)=>handleOptionChange(e,'status')} />
                             Unknown
                         </label>
-                </div>
-                <div >
+                </FilterOptionValue>
+                <FilterOptionValue >
                     <label>
                         <input type="radio" value=""
                             checked={props.selectedFilters && props.selectedFilters['status'] === ''}
                             onChange={(e)=>handleOptionChange(e,'status')} />
                             All
                         </label>
-                </div>
+                </FilterOptionValue>
 
             </FilterItemCont>
             <FilterItemCont >
                 <FilterItemTitle >Gender</FilterItemTitle>
-                <div >
+                <FilterOptionValue >
 
                     <label>
                         <input type="radio" value="Male"
@@ -111,31 +115,31 @@ export default function Filter(props) {
                             onChange={(e)=>handleOptionChange(e,'gender')} />
                             Male
                         </label>
-                </div>
-                <div >
+                </FilterOptionValue>
+                <FilterOptionValue >
                     <label>
                         <input type="radio" value="Female"
                               checked={props.selectedFilters && props.selectedFilters['gender'] === 'Female'}
                               onChange={(e)=>handleOptionChange(e,'gender')} />
                             Female
                     </label>
-                </div>
-                <div >
+                </FilterOptionValue>
+                <FilterOptionValue >
                     <label>
                         <input type="radio" value="unknown"
                             checked={props.selectedFilters && props.selectedFilters['gender'] === 'unknown'}
                             onChange={(e)=>handleOptionChange(e,'gender')} />
                            Unknown
                         </label>
-                </div>
-                <div >
+                </FilterOptionValue>
+                <FilterOptionValue >
                     <label>
                         <input type="radio" value=""
                             checked={props.selectedFilters && props.selectedFilters['gender'] === ''}
                             onChange={(e)=>handleOptionChange(e,'gender')} />
                             All
                         </label>
-                </div>
+                </FilterOptionValue>
 
             </FilterItemCont>
            

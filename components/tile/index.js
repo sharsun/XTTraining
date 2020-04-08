@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { dateDiff } from '../../utilities/util';
 
 const Img = styled.div`
     width:100%;
@@ -54,10 +55,13 @@ const InfoItem = styled.div`
         flex-basis:80%;
         padding:0 10px;
         text-align:right;
+        color:#f5a42a;
     }
 `;
+
+
 export default function Tile(props){
-    const titleId = `id:${props.data.id}`
+    const titleId = `id:${props.data.id} - created ${dateDiff(props.data.created, new Date())} years ago`
     return(<div>
         <Img><img src={props.data.image}/></Img>
         <Content>

@@ -5,7 +5,7 @@ const Select = styled.div`
 border: 1px solid #ece9e9;
 width: 200px;
 padding: 8px;
-font-style:italic;
+
  cursor:pointer;
 
 `;
@@ -37,12 +37,14 @@ const Options = styled.div`
 export default function Sort(props) {
  
     const [isOpen, setIsOpen] = useState(false);
+    const [sortType,setSortType]= useState('Asc')
     const [dropdownCaret,setDropDownCaret] = useState('&#9660;');
 
     let handleChange = (event) => {
         props.handleSort(event.target.getAttribute('data-value'))
         setIsOpen(false);
         setDropDownCaret('&#9660;');
+        setSortType(event.target.getAttribute('data-value'));
     }
 
     let onClickHandler = (event)=>{
@@ -57,14 +59,14 @@ export default function Sort(props) {
     
     <SortCont>
         <Select  value='none' className='' onClick={onClickHandler} >
-             Select By ID
+             <strong>{`Sort By Id: ${sortType}`}</strong>
           <DropDownCaret dangerouslySetInnerHTML={{__html:dropdownCaret}}></DropDownCaret>
   
         </Select>
         <Options isOpen={isOpen}>
               
-              <div  onClick={handleChange} data-value='asc'>Ascending</div>
-              <div onClick={handleChange}  data-value='desc'>Descending</div>
+              <div  onClick={handleChange} data-value='Asc'>Ascending</div>
+              <div onClick={handleChange}  data-value='Desc'>Descending</div>
           </Options>
     </SortCont>)
 }
